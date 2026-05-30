@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Categories</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .categories {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .category-card:hover {
+      transform: scale(1.03);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .category-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-page {
+      display: none;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .back-btn {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 25px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+       display: flex;
+  flex-direction: column;
+
+  height: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 15px;
+      display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+    }
+
+    .price {
+      color: green;
+      font-size: 20px;
+      font-weight: bold;
+    }
+.sub-category-title {
+
+  margin-top: 50px;
+  margin-bottom: 25px;
+
+  background: #222;
+  color: white;
+
+  padding: 18px 20px;
+
+  border-radius: 10px;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Product Categories</h1>
+</header>
+
+<div id="mainCategories" class="categories">
+
+  <div class="category-card" onclick="openCategory('CRAVE')">
+    <img src="https://onevaporave.com/cdn/shop/files/CRAVEMAX.png?v=1738684913&width=493">
+    <div class="category-content">
+      <h2>CRAVE</h2>
+	<p>Crave 2500, Crave 5500, Crave 40K</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openCategory('GEEKBAR')">
+    <img src="https://myvapereview.com/wp-content/uploads/2023/10/20231030200515.png">
+    <div class="category-content">
+      <h2>GEEKBAR</h2>
+	<p>Geekbar 15K, Geekbar 25K</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openCategory('ZYN')">
+    <img src="https://twowombats.com/cdn/shop/articles/Pouchopedia-What-Is-Zyn_86c9ba11-120c-4568-bd67-9c9cb8419404.webp?v=1771234289&width=600">
+    <div class="category-content">
+      <h2>ZYN</h2>
+    </div>
+  </div>
+
+</div>
+
+<div id="CRAVE" class="product-page">
+  <button class="back-btn" onclick="goBack()">← Back</button>
+  <h1>CRAVE</h1>
+<h2 class="sub-category-title">CRAVE2500</h2>
+  <h3>(Buy 1 for $19.99+, Buy 3 for $49.99+)</h3>
+
+  <div class="products">
+    <div class="product">
+      <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/129092251/products/812266360/5593046285.jpg">
+      <div class="product-content">
+        <h3>CRAVE MAX Clear 5%</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/05/2-16.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Ultra Menthol</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/12/STRAWBERRY-ICE5.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Strawberry Ice </h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/12/BLUE-RAZZ-ICE3.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Blue Razz Ice</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+  <div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2021/09/2-17.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Ice grape</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+ <div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/07/2-24.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Soda pop</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+ <div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/12/PEACH-ICE-Q3.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Peach Ice</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2021/09/2-21.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Mint</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravevapedisposable.com/wp-content/uploads/2024/02/Black-Ice-600x600-1.jpg">
+      <div class="product-content">
+        <h3>CRAVE MAX Black Ice</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/07/2-8.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Frosty</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2021/09/2-13.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Blue Razz Bubblegum</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/12/FCUKING-FAB-Q3.png">
+      <div class="product-content">
+        <h3>CRAVE MAX fcuking Fab</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/12/BLOW-POP-Q3.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Blow Pop</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2024/05/Crave-Max-Vanilla-Custard.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Vanilla Custard</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://bluemoonboston.com/wp-content/uploads/2022/10/mang-bery-frost-1.png">
+      <div class="product-content">
+        <h3>CRAVE MAX Mango Berry Frost</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://sigg-distro.myshopify.com/cdn/shop/files/crave-max-mesh-coil-2500-puffs-disposable-vape-killer-frost-749.webp?v=1775579744&width=1920">
+      <div class="product-content">
+        <h3>CRAVE MAX Killer Frost</h3>
+<p>2500 PUFFS</P>
+        <div class="price">$19.99</div>
+      </div>
+    </div>
+
+  </div>
+
+ <h2 class="sub-category-title">CRAVE 5500</h2>
+   <h3> (Buy 1 for $29.99, Buy 3 and get $20 off)</h3>
+
+  <div class="products">
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2022/12/mango-tajin3.png">
+      <div class="product-content">
+        <h3>CRAVE Mango tajin</h3>
+<p>5500 PUFFS</P>
+        <div class="price">$29.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2022/12/blue-razz-ice3.png">
+      <div class="product-content">
+        <h3>CRAVE Boom Boom</h3>
+<p>5500 PUFFS</P>
+        <div class="price">$29.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2022/12/lush-ice3.png">
+      <div class="product-content">
+        <h3>CRAVE Pink Champagne</h3>
+<p>5500 PUFFS</P>
+        <div class="price">$29.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2022/12/strawberry-kiwi3.png">
+      <div class="product-content">
+        <h3>CRAVE Exotic Soda</h3>
+<p>5500 PUFFS</P>
+        <div class="price">$29.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://cravedisposable.com/wp-content/uploads/2022/12/fruit-candy3.png">
+      <div class="product-content">
+        <h3>CRAVE fruit Candy</h3>
+<p>5500 PUFFS</P>
+        <div class="price">$29.99</div>
+      </div>
+    </div>
+</div>
+
+ <h2 class="sub-category-title">CRAVE 40K</h2>
+<h3>(Buy 1 for $34.99, Buy 3 and get $15 off)</h3>
+
+<div class="products">
+
+  <div class="product">
+    <img src="https://cravedisposable.com/wp-content/uploads/2025/08/CLEAR_5_-A.png">
+    <div class="product-content">
+      <h3>CRAVE X Clear 5%</h3>
+      <p>40k PUFFS</p>
+      <div class="price">$34.99</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://cravedisposable.com/wp-content/uploads/2025/08/BLACK_ICE-A.png">
+    <div class="product-content">
+      <h3>CRAVE X Black Ice</h3>
+      <p>40k PUFFS</p>
+      <div class="price">$34.99</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="https://cravedisposable.com/wp-content/uploads/2025/08/BOSTON_MINT-A.png">
+    <div class="product-content">
+      <h3>CRAVE X Boston Mint</h3>
+      <p>40k PUFFS</p>
+      <div class="price">$34.99</div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div id="GEEKBAR" class="product-page">
+  <button class="back-btn" onclick="goBack()">← Back</button>
+  <h1>GEEKBAR</h1>
+ <h2 class="sub-category-title">GEEK BAR 15K</h2>
+<h3>(Buy 1 for $34.99, Buy 3 and get $15 off)</h3>
+
+  <div class="products">
+    <div class="product">
+      <img src="https://lousquare.com/cdn/shop/files/Geek_Bar_Pulse_5_Frozen_Watermelon.png?v=1727921329">
+      <div class="product-content">
+        <h3>FROZEN WATERMEON</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://provape.com/media/mf_webp/png/media/catalog/product/cache/896a704700b43f8a3d5d98936b485a9e/w/a/watermelon_ice_geek_bar_pulse_15k_puffs_zero_nicotine_disposable_1.webp">
+      <div class="product-content">
+        <h3>WATERMELON ICE</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://www.ejuicedb.com/cdn/shop/files/mexico-mango-geek-bar-pulse_1.webp?v=1744844957&width=416">
+      <div class="product-content">
+        <h3>MEXICO MANGO</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://provape.com/media/catalog/product/cache/4d9b18a971217d926162a74d99f018db/g/e/geek_bar_pulse_15000_disposable_blue_razz_ice_1.jpg">
+      <div class="product-content">
+        <h3>BLUE RAZZ ICE</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://cityhive-production-cdn.cityhive.net/products/68ba4af62011a129a8e5a8b1/large.png?format=square">
+      <div class="product-content">
+        <h3>JUICY PEACH ICE</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://www.ejuicedb.com/cdn/shop/files/blueberry-watermelon-geek-bar.webp?v=1744839959">
+      <div class="product-content">
+        <h3> BLUEBERRY WATERMELON</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://www.ejuicedb.com/cdn/shop/files/Berry-Bliss-Geek-Bar-Pulse_0_grande.webp?v=1744765837">
+      <div class="product-content">
+        <h3>BERRY BLISS</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cityhive-production-cdn.cityhive.net/product_details/6848a8aa0b54fe4d37491110/primary_image/large.png?sig=53915dbefcdb26c884d6f45972b2baf958f55184c41e77ca7900908be7e7b7f2">
+      <div class="product-content">
+        <h3>PINEAPPLE SAVERS</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIzmv7K5MY2swtCIELo-3BNYcNM_mrqUc7iQ&s">
+      <div class="product-content">
+        <h3>DRAGON MELON</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://www.ejuicedb.com/cdn/shop/files/tropical-rainbow-blast-geek-bar-pulse_1.webp?v=1744842424">
+      <div class="product-content">
+        <h3>TROPICAL RAINBOW BLAST</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cdn11.bigcommerce.com/s-pfn9mbmrhc/images/stencil/1280x1280/products/216/669/Geek_Bar_Pulse_15K_Disposable_Vape_Sour_Strawberry__20990.1727977420.jpg?c=1&imbypass=on">
+      <div class="product-content">
+        <h3>SOUR STRAWBEERY   </h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://provape.com/media/catalog/product/cache/896a704700b43f8a3d5d98936b485a9e/g/e/geek_bar_pulse_15000_disposable_california_cherry_1.jpg">
+      <div class="product-content">
+        <h3>CALIFORNIA CHERRY</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://www.ejuicedb.com/cdn/shop/files/Fcuking-FAB-Geek-Bar-Pulse_1.webp?v=1744840775&width=493">
+      <div class="product-content">
+        <h3>FUCKING FAB</h3>
+        <p>15k puffs</p>
+        <div class="price">$34.99</div>
+      </div>
+    </div>
+  </div>
+
+
+ <h2 class="sub-category-title">GEEK BAR 25K</h2>
+<h3>(Buy 1 for $39.99, Buy 3 and get $20 off)</h3>
+ <div class="products">
+    <div class="product">
+      <img src="https://vapedojo.com/cdn/shop/files/White-Peach-Raspberry-Geek-Bar-P_1024x.png?v=1748953441">
+      <div class="product-content">
+        <h3>WHITE PEACH RASPBERRY</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://cityhive-production-cdn.cityhive.net/product_details/67899885cf1b0e4db30a4d61/primary_image/large.png?sig=7b62cee747362fa1f02acc1496c2ba25e2990d2fdcb51e7ab0c7013a5c16c190">
+      <div class="product-content">
+        <h3>ORANGE FUCKING FAB</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://provape.com/media/catalog/product/cache/896a704700b43f8a3d5d98936b485a9e/p/e/peach_jam_geek_bar_pulse_x_25000_puffs_disposable_1.jpg">
+      <div class="product-content">
+        <h3>PEACH JAM</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://vapedojo.com/cdn/shop/files/GBBlue-Rancher_1000x.png?v=1748954449">
+      <div class="product-content">
+        <h3>BLUE RANCHER</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://cityhive-production-cdn.cityhive.net/product_details/678993a06d660d3c9885760b/primary_image/large.png?sig=47d3b2e40d156a1eeb50dc00a8e9011144d253a94580847625716cb1a6b2c1cf">
+      <div class="product-content">
+        <h3>MIAMI MINT</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://cityhive-production-cdn.cityhive.net/products/68acb993b299482650a455b9/large.png">
+      <div class="product-content">
+        <h3>STRAWBERRY B-BURST</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://static.wixstatic.com/media/629c95_bff52b6fd1bc4b35827657adba6e7899~mv2.webp/v1/fill/w_560,h_560,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/629c95_bff52b6fd1bc4b35827657adba6e7899~mv2.webp">
+      <div class="product-content">
+        <h3>BANANA TAFFY FREEZE</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://www.zmarksthespot.com/cdn/shop/files/STRAWBERRYKIWIICE_METEOREDITION_GeekBARPULSEXDISPOSABLEVAPE.jpg?v=1745402390">
+      <div class="product-content">
+        <h3>STRAWBERRY KIWI ICE</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://vapedojo.com/cdn/shop/files/GBPXRaspberryPeachLime_1024x1024.jpg?v=1742325394">
+      <div class="product-content">
+        <h3>RASPBERRY PEACH LIME</h3>
+        <p>25k puffs</p>
+        <div class="price">$39.99</div>
+      </div>
+    </div>
+</div>
+</div>
+                                           
+<div id="ZYN" class="product-page">
+  <button class="back-btn" onclick="goBack()">← Back</button>
+  <h1>ZYN</h1>
+
+  <div class="products">
+    <div class="product">
+      <img src="https://usanico.com/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/z/y/zyn-wintergreen-6mgnicotine-pouches-6269379.webp">
+      <div class="product-content">
+        <h3>Wintergreen</h3>
+        <p>3,6 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1d02774203f9a41dca5505c567f31cbd/Z/Y/ZYN-Spearmint-6mg-02.png">
+      <div class="product-content">
+        <h3>Spearmint</h3>
+        <p>3,6,9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1c61237da9eb98ae7875508cb5856b02/Z/Y/ZYN-Peppermint-6mg-02.png">
+      <div class="product-content">
+        <h3>Peppermint</h3>
+        <p>3,6 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/cfaf7b9f-fc43-4fcf-a931-7304b479664b-retina-large.png">
+      <div class="product-content">
+        <h3>Citrus</h3>
+        <p>3,6,11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1d02774203f9a41dca5505c567f31cbd/Z/y/Zyn-Coffee-6mg-01.png">
+      <div class="product-content">
+        <h3>Coffee</h3>
+        <p>3,6 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://provape.com/media/mf_webp/png/media/catalog/product/cache/896a704700b43f8a3d5d98936b485a9e/z/y/zyn_cinnamon_15_nicotine_pouches_3-6mg.webp">
+      <div class="product-content">
+        <h3>Cinnamon</h3>
+        <p>6 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/694365ea-0447-454b-a3a1-bef41cd37fe3-retina-large.png">
+      <div class="product-content">
+        <h3>Cool Mint</h3>
+	<p> 3,6,9,11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://whitelip.com/wp-content/uploads/2025/07/ZYN-Apple-Mint-Extra-Strong-2.webp">
+      <div class="product-content">
+        <h3>Apple Mint</h3>
+	<p>9,11,24 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://zynpouchescanada.ca/wp-content/uploads/2026/04/Zyn-two-apples-slim-768x768.jpg">
+      <div class="product-content">
+        <h3>Two Apple</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://thesnuslife.com/cdn/shop/files/ZYN060_3ccad93a-80ab-4b1c-8f91-c0ae02b19051_grande.webp?v=1767161295">
+      <div class="product-content">
+        <h3>Cool Watermelon</h3>
+	<p>6,9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://thesnuslife.com/cdn/shop/files/ZYN034_467b444c-88a5-4c92-9793-3d55919649d8_748x.webp?v=1767161265">
+      <div class="product-content">
+        <h3>Cool Blueberry</h3>
+	<p>9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://lighterusa.com/cdn/shop/files/ZYNExoticMangoMini3mg.png?height=562&pad_color=fff&v=1750095918&width=562">
+      <div class="product-content">
+        <h3>Exotic Mango</h3>
+	<p>9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://nicotinos.com/cdn/shop/files/zyn-black-cherry-6-mg_9f88d8a2-699d-40a2-a1c0-22c21c4bd791_2048x.png?v=1756282656">
+      <div class="product-content">
+        <h3>Black cherry</h3>
+	<p>6,24 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_sdT2K-Z9-rRU633TRmDKHx-Ih6q1rd7NEg&s">
+      <div class="product-content">
+        <h3>Dark Frost</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://europesnus.com/cdn/shop/files/WhiteFoxPepperedMint-2025-01-22T165048.537_77094e3a-6c28-4efa-9cc7-61b2352fad48.png?v=1737561123&width=480">
+      <div class="product-content">
+        <h3>Deep Freeze</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlevn3pMgVRUPu5kNiKYkJovJ8t13AKBcVfA&s">
+      <div class="product-content">
+        <h3>Espressino</h3>
+	<p>6 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://dipski.co/wp-content/uploads/2025/10/Zyn-%E2%80%94-Strawberry-Cake-11mg-1.webp">
+      <div class="product-content">
+        <h3>Strawbeey Cake</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://nordicfulfillment.com/cdn/shop/files/1_ceb87908-39e8-4d20-adf6-78c968cd3627.png?v=1755159876&width=1080">
+      <div class="product-content">
+        <h3>Red Fruit</h3>
+	<p>9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://zynpouchescanada.ca/wp-content/uploads/2026/04/Zyn-grape-ice-slim-768x768.jpg">
+      <div class="product-content">
+        <h3>Grape Ice</h3>
+	<p>11, 24 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://nicpouches.com/cdn/shop/files/icy-mint-9-5mg-nicotine-pouches-by-zyn-image.jpg?v=1737544581">
+      <div class="product-content">
+        <h3>Icy Mint</h3>
+	<p>12.5 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://ams.iqmetrix.net/images/9e80b3ef-9f83-43c0-9090-c0e285202d65">
+      <div class="product-content">
+        <h3>Tropical Freeze</h3>
+	<p>15 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://v3-media-we.northerner.com/uknorthr/images/plytix-683fdc9c06277f7b4be6ee0a/500/500/fill/n/plytix-683fdc9c06277f7b4be6ee0a-png.png">
+      <div class="product-content">
+        <h3>Guava Spice</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cova-common.s3.ca-central-1.amazonaws.com/ZYN%20Slim%20Nicotine%20Pouches%2015mg%20Gummy%20Bear.png1763075202894.png">
+      <div class="product-content">
+        <h3>Gummy Bear</h3>
+	<p>9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://img-va.myshopline.com/image/store/1755176058127/3-11_1445x.webp?w=800&h=800&q=80">
+      <div class="product-content">
+        <h3>Red Bull</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cova-common.s3.ca-central-1.amazonaws.com/ZYN%20Slim%20Fizzy%20Cola%2012mg.png1760188950777.png">
+      <div class="product-content">
+        <h3>Fizzy Cola</h3>
+	<p>9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://cova-common.s3.ca-central-1.amazonaws.com/ZYN%20Slim%20Pouches%2011mg%20Cola%20Ice.png1758662029733.png">
+      <div class="product-content">
+        <h3>Cola Ice</h3>
+	<p>11, 24 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://dipski.co/wp-content/uploads/2025/08/Zyn-%E2%80%94-Strawberry-Watermelon-20mg-1024x1024.webp">
+      <div class="product-content">
+        <h3>Strawberry Watermelon ice</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://img-va.myshopline.com/image/store/1755176058127/-(3).webp?w=800&h=800">
+      <div class="product-content">
+        <h3>White Monster</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://thesnuslife.com/cdn/shop/files/ZYN070_64af3ac9-2af9-4f3f-99ca-a3468c9d8d2e.webp?v=1767161311&width=600">
+      <div class="product-content">
+        <h3>Fresh Mint</h3>
+	<p>6 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://dipski.co/wp-content/uploads/2025/08/Zyn-%E2%80%94-Pineapple-Coconut-9mg.webp">
+      <div class="product-content">
+        <h3>Pineapple Coconut</h3>
+	<p>9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="">
+      <div class="product-content">
+        <h3>Dragon Fruit</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://vapewolinak.com/wp-content/uploads/2025/08/banana-milshake.jpg">
+      <div class="product-content">
+        <h3>Banana Milkshake</h3>
+	<p>11 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://ams.iqmetrix.net/images/b1a90000-3123-4ed3-9949-9f41b6376444">
+      <div class="product-content">
+        <h3>Miami mint</h3>
+	<p>12.5 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://yallavapeuae.com/cdn/shop/files/rn-image_picker_lib_temp_3daa7e78-f064-4c4d-a2f9-54d087ed8e41.jpg?v=1731002016&width=1445">
+      <div class="product-content">
+        <h3>Cool Tropical</h3>
+	<p>9 mg</p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const opened = sessionStorage.getItem("opened_once");
+
+  if (opened) {
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        background:#111;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        font-family:Arial;
+        text-align:center;
+        padding:20px;
+      ">
+        <h1 style="color:red;font-size:50px;">ACCESS BLOCKED</h1>
+        <p style="font-size:22px;">This page can only be opened once.</p>
+      </div>
+    `;
+  } else {
+    sessionStorage.setItem("opened_once", "yes");
+  }
+
+  function openCategory(id) {
+    document.getElementById("mainCategories").style.display = "none";
+    document.querySelectorAll(".product-page").forEach(page => {
+    page.style.display = "none";
+  });
+  document.getElementById(id).style.display = "block";
+}
+
+  function goBack() {
+    document.querySelectorAll(".product-page").forEach(page => {
+      page.style.display = "none";
+    });
+
+    document.getElementById("mainCategories").style.display = "grid";
+    document.querySelector("header h1").textContent = "Product Categories";
+  }
+</script>
+
+</body>
+</html>
