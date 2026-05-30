@@ -873,47 +873,95 @@
 </div>
 
 <script>
-  const opened = sessionStorage.getItem("opened_once");
 
-  if (opened) {
+  // Unique visitor lock
+  const DEVICE_KEY = "device_access_lock";
+
+  // Detect if opened before
+  const alreadyOpened =
+    localStorage.getItem(DEVICE_KEY);
+
+  // If already opened once
+  if(alreadyOpened){
+
     document.body.innerHTML = `
+
       <div style="
         height:100vh;
         background:#111;
         color:white;
+
         display:flex;
         justify-content:center;
         align-items:center;
         flex-direction:column;
+
         font-family:Arial;
         text-align:center;
-        padding:20px;
       ">
-        <h1 style="color:red;font-size:50px;">ACCESS BLOCKED</h1>
-        <p style="font-size:22px;">This page can only be opened once.</p>
+
+        <h1 style="
+          color:red;
+          font-size:50px;
+        ">
+          ACCESS DENIED
+        </h1>
+
+        <p style="
+          font-size:22px;
+        ">
+          This link has already been used
+          on this device.
+        </p>
+
       </div>
+
     `;
+
   } else {
-    sessionStorage.setItem("opened_once", "yes");
+
+    // Save lock permanently
+    localStorage.setItem(
+      DEVICE_KEY,
+      "used"
+    );
+
   }
 
-  function openCategory(id) {
-    document.getElementById("mainCategories").style.display = "none";
-    document.querySelectorAll(".product-page").forEach(page => {
-    page.style.display = "none";
-  });
-  document.getElementById(id).style.display = "block";
-}
+  // Open category page
+  function openCategory(id){
 
-  function goBack() {
-    document.querySelectorAll(".product-page").forEach(page => {
+    document.getElementById(
+      "mainCategories"
+    ).style.display = "none";
+
+    document.querySelectorAll(
+      ".product-page"
+    ).forEach(page => {
+
       page.style.display = "none";
+
     });
 
-    document.getElementById("mainCategories").style.display = "grid";
-    document.querySelector("header h1").textContent = "Product Categories";
+    document.getElementById(
+      id
+    ).style.display = "block";
   }
-</script>
 
-</body>
-</html>
+  // Back button
+  function goBack(){
+
+    document.querySelectorAll(
+      ".product-page"
+    ).forEach(page => {
+
+      page.style.display = "none";
+
+    });
+
+    document.getElementById(
+      "mainCategories"
+    ).style.display = "grid";
+  }
+
+</script>
