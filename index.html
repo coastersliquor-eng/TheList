@@ -873,47 +873,156 @@
 </div>
 
 <script>
+
   const opened = sessionStorage.getItem("opened_once");
 
-  if (opened) {
+  function blockAccess() {
+
     document.body.innerHTML = `
+
       <div style="
         height:100vh;
         background:#111;
         color:white;
+
         display:flex;
         justify-content:center;
         align-items:center;
         flex-direction:column;
+
         font-family:Arial;
         text-align:center;
         padding:20px;
       ">
-        <h1 style="color:red;font-size:50px;">ACCESS BLOCKED</h1>
-        <p style="font-size:22px;">This page can only be opened once.</p>
+
+        <h1 style="
+          color:red;
+          font-size:50px;
+        ">
+          ACCESS BLOCKED
+        </h1>
+
+        <p style="
+          font-size:22px;
+        ">
+          This page can only be opened once.
+        </p>
+
       </div>
+
     `;
+  }
+
+  if (opened) {
+
+    blockAccess();
+
   } else {
-    sessionStorage.setItem("opened_once", "yes");
+
+    sessionStorage.setItem(
+      "opened_once",
+      "yes"
+    );
+
+    // CREATE TIMER DISPLAY
+
+    const timerBox =
+      document.createElement("div");
+
+    timerBox.id = "timerBox";
+
+    timerBox.style.position = "fixed";
+    timerBox.style.top = "15px";
+    timerBox.style.right = "20px";
+
+    timerBox.style.background = "#111";
+    timerBox.style.color = "white";
+
+    timerBox.style.padding = "12px 18px";
+
+    timerBox.style.borderRadius = "10px";
+
+    timerBox.style.fontSize = "22px";
+    timerBox.style.fontWeight = "bold";
+
+    timerBox.style.zIndex = "9999";
+
+    document.body.appendChild(timerBox);
+
+    // 10 MINUTES
+
+    let timeLeft =
+      1 * 60;
+
+    function updateTimer() {
+
+      const minutes =
+        Math.floor(timeLeft / 60);
+
+      const seconds =
+        timeLeft % 60;
+
+      timerBox.innerHTML =
+        "Time Left: "
+        + String(minutes).padStart(2, "0")
+        + ":"
+        + String(seconds).padStart(2, "0");
+
+      // TIME ENDED
+
+      if (timeLeft <= 0) {
+
+        location.reload();
+        return;
+      }
+
+      timeLeft--;
+
+    }
+
+    updateTimer();
+
+    setInterval(updateTimer, 1000);
+
   }
 
   function openCategory(id) {
-    document.getElementById("mainCategories").style.display = "none";
-    document.querySelectorAll(".product-page").forEach(page => {
-    page.style.display = "none";
-  });
-  document.getElementById(id).style.display = "block";
-}
 
-  function goBack() {
-    document.querySelectorAll(".product-page").forEach(page => {
+    document.getElementById(
+      "mainCategories"
+    ).style.display = "none";
+
+    document.querySelectorAll(
+      ".product-page"
+    ).forEach(page => {
+
       page.style.display = "none";
+
     });
 
-    document.getElementById("mainCategories").style.display = "grid";
-    document.querySelector("header h1").textContent = "Product Categories";
+    document.getElementById(
+      id
+    ).style.display = "block";
   }
-</script>
 
-</body>
-</html>
+  function goBack() {
+
+    document.querySelectorAll(
+      ".product-page"
+    ).forEach(page => {
+
+      page.style.display = "none";
+
+    });
+
+    document.getElementById(
+      "mainCategories"
+    ).style.display = "grid";
+
+    document.querySelector(
+      "header h1"
+    ).textContent =
+      "Product Categories";
+  }
+
+</script>
