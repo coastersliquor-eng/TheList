@@ -871,97 +871,71 @@
     </div>
   </div>
 </div>
-
 <script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get("code");
 
-  // Unique visitor lock
-  const DEVICE_KEY = "device_access_lock";
-
-  // Detect if opened before
-  const alreadyOpened =
-    localStorage.getItem(DEVICE_KEY);
-
-  // If already opened once
-  if(alreadyOpened){
-
+  if (!code) {
     document.body.innerHTML = `
-
       <div style="
         height:100vh;
         background:#111;
         color:white;
-
         display:flex;
         justify-content:center;
         align-items:center;
         flex-direction:column;
-
         font-family:Arial;
         text-align:center;
+        padding:20px;
       ">
-
-        <h1 style="
-          color:red;
-          font-size:50px;
-        ">
-          ACCESS DENIED
-        </h1>
-
-        <p style="
-          font-size:22px;
-        ">
-          This link has already been used
-          on this device.
-        </p>
-
+        <h1 style="color:red;font-size:45px;">INVALID LINK</h1>
+        <p style="font-size:22px;">Please use the link sent by the store.</p>
       </div>
-
     `;
+    throw new Error("No code in link");
+  }
 
+  const USED_KEY = "used_link_" + code;
+
+  if (localStorage.getItem(USED_KEY)) {
+    document.body.innerHTML = `
+      <div style="
+        height:100vh;
+        background:#111;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        font-family:Arial;
+        text-align:center;
+        padding:20px;
+      ">
+        <h1 style="color:red;font-size:45px;">ACCESS BLOCKED</h1>
+        <p style="font-size:22px;">This link has already been used.</p>
+      </div>
+    `;
   } else {
-
-    // Save lock permanently
-    localStorage.setItem(
-      DEVICE_KEY,
-      "used"
-    );
-
+    localStorage.setItem(USED_KEY, "used");
   }
 
-  // Open category page
-  function openCategory(id){
+  function openCategory(id) {
+    document.getElementById("mainCategories").style.display = "none";
 
-    document.getElementById(
-      "mainCategories"
-    ).style.display = "none";
-
-    document.querySelectorAll(
-      ".product-page"
-    ).forEach(page => {
-
+    document.querySelectorAll(".product-page").forEach(page => {
       page.style.display = "none";
-
     });
 
-    document.getElementById(
-      id
-    ).style.display = "block";
+    document.getElementById(id).style.display = "block";
   }
 
-  // Back button
-  function goBack(){
-
-    document.querySelectorAll(
-      ".product-page"
-    ).forEach(page => {
-
+  function goBack() {
+    document.querySelectorAll(".product-page").forEach(page => {
       page.style.display = "none";
-
     });
 
-    document.getElementById(
-      "mainCategories"
-    ).style.display = "grid";
+    document.getElementById("mainCategories").style.display = "grid";
+    document.querySelector("header h1").textContent = "Product Categories";
   }
-
 </script>
