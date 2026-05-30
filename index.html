@@ -871,11 +871,11 @@
     </div>
   </div>
 </div>
+
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const code = params.get("code");
+  const opened = sessionStorage.getItem("opened_once");
 
-  if (!code) {
+  if (opened) {
     document.body.innerHTML = `
       <div style="
         height:100vh;
@@ -889,46 +889,21 @@
         text-align:center;
         padding:20px;
       ">
-        <h1 style="color:red;font-size:45px;">INVALID LINK</h1>
-        <p style="font-size:22px;">Please use the link sent by the store.</p>
-      </div>
-    `;
-    throw new Error("No code in link");
-  }
-
-  const USED_KEY = "used_link_" + code;
-
-  if (localStorage.getItem(USED_KEY)) {
-    document.body.innerHTML = `
-      <div style="
-        height:100vh;
-        background:#111;
-        color:white;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-direction:column;
-        font-family:Arial;
-        text-align:center;
-        padding:20px;
-      ">
-        <h1 style="color:red;font-size:45px;">ACCESS BLOCKED</h1>
-        <p style="font-size:22px;">This link has already been used.</p>
+        <h1 style="color:red;font-size:50px;">ACCESS BLOCKED</h1>
+        <p style="font-size:22px;">This page can only be opened once.</p>
       </div>
     `;
   } else {
-    localStorage.setItem(USED_KEY, "used");
+    sessionStorage.setItem("opened_once", "yes");
   }
 
   function openCategory(id) {
     document.getElementById("mainCategories").style.display = "none";
-
     document.querySelectorAll(".product-page").forEach(page => {
-      page.style.display = "none";
-    });
-
-    document.getElementById(id).style.display = "block";
-  }
+    page.style.display = "none";
+  });
+  document.getElementById(id).style.display = "block";
+}
 
   function goBack() {
     document.querySelectorAll(".product-page").forEach(page => {
@@ -939,3 +914,6 @@
     document.querySelector("header h1").textContent = "Product Categories";
   }
 </script>
+
+</body>
+</html>
