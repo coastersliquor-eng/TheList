@@ -70,11 +70,23 @@
     }
 
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      align-items: stretch;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
 
     .product {
       background: white;
@@ -90,7 +102,8 @@
     .product img {
       width: 100%;
       height: 220px;
-      object-fit: cover;
+      object-fit: contain;
+      background : white;
     }
 
     .product-content {
@@ -155,6 +168,27 @@
     <img src="https://twowombats.com/cdn/shop/articles/Pouchopedia-What-Is-Zyn_86c9ba11-120c-4568-bd67-9c9cb8419404.webp?v=1771234289&width=600">
     <div class="category-content">
       <h2>ZYN</h2>
+    </div>
+  </div>
+
+ <div class="category-card" onclick="openCategory('VELO')">
+    <img src="https://cx-velo-gb.secure-update.co.uk/uploads/campaigns/o/dv_2026_03_26_03_07_15_82363.jpg">
+    <div class="category-content">
+      <h2>VELO</h2>
+    </div>
+  </div>
+
+ <div class="category-card" onclick="openCategory('LUCY')">
+    <img src="https://cdn.trendhunterstatic.com/thumbs/519/intelligent-nicotine.jpeg">
+    <div class="category-content">
+      <h2>LUCY</h2>
+    </div>
+  </div>
+
+ <div class="category-card" onclick="openCategory('PABLO')">
+    <img src="https://snusboys.co.uk/wp-content/uploads/2026/03/PABLO-SILVER-1200-x-675.webp">
+    <div class="category-content">
+      <h2>PABLO</h2>
     </div>
   </div>
 
@@ -863,6 +897,137 @@
   </div>
 </div>
 
+<div id="VELO" class="product-page">
+  <button class="back-btn" onclick="goBack()">← Back</button>
+  <h1>VELO</h1>
+  <h3>(Buy 5 and Get 1 free)</h3>
+
+<div class="products">
+  <div class="product">
+  <img src="https://nicokick.com/media/catalog/product/cache/95ebf4d541f49b9d5a07584eca37111c/V/e/Velo-Plus-Wintergreen-9mg-02.png">
+  <div class="product-content">
+    <h3>WINTERGREEN</h3>
+    <p>6,9 mg</p>
+    <div class="price">$9.99</div>
+  </div>
+</div>
+
+    <div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1c61237da9eb98ae7875508cb5856b02/V/e/Velo-Plus-Peppermint-9mg-03.png">
+      <div class="product-content">
+        <h3>PEPPERMINT</h3>
+<p>6,9 mg</P>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://nicokick.com/media/catalog/product/cache/3976d3258b0b39e38632aa23d048f280/V/e/Velo-Plus-Mint-9mg-03.png">
+      <div class="product-content">
+        <h3>MINT</h3>
+<p>6,9 MG</P>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://www.bnbtobacco.com/cdn/shop/files/velo-plus-wild-berry-9.png?v=1743098089&width=700">
+      <div class="product-content">
+        <h3>WILD BERRY</h3>
+<p>6,9 mg</P>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+  <div class="product">
+      <img src="https://www.bnbtobacco.com/cdn/shop/files/Velo_VeloPlus_Cappuccino_f97f8977-3719-421d-a6ca-da5c794d581d.png?v=1769547074">
+      <div class="product-content">
+        <h3>CAPPUCCINO</h3>
+<p>6,9 mg</P>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+   </div>
+ </div>
+
+
+
+ 
+<div id="LUCY" class="product-page">
+  <button class="back-btn" onclick="goBack()">← Back</button>
+  <h1>LUCY</h1>
+  <h3>(Buy 5 and Get 1 free)</h3>
+
+<div class="products">
+  <div class="product">
+  <img src="https://www.northerner.com/media/catalog/product/cache/1c61237da9eb98ae7875508cb5856b02/8/4/840-LucyBreakers-AppleIce-12mg-Lucy.png">
+  <div class="product-content">
+    <h3>APPLE ICE</h3>
+    <p>12 mg</p>
+    <div class="price">$9.99</div>
+  </div>
+</div>
+
+    <div class="product">
+      <img src="https://ejuicedirect.com/cdn/shop/files/123_700x700.webp?v=1719071472">
+      <div class="product-content">
+        <h3>WINTERGREEN</h3>
+<p>12 mg</P>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://ejuicedirect.com/cdn/shop/files/129_700x700.webp?v=1719071362">
+      <div class="product-content">
+        <h3>MINT</h3>
+<p>612 mg</P>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1c61237da9eb98ae7875508cb5856b02/8/4/840-LucyBreakers-Mango-4mg-Lucy.png">
+      <div class="product-content">
+        <h3>MANGO</h3>
+<p>12 mg</P>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+  <div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1d02774203f9a41dca5505c567f31cbd/8/4/840-LucyBreakers-AppleCider-8mg-02.png">
+      <div class="product-content">
+        <h3>APPLE CIDER</h3>
+<P>Lucy breaker 12mg </p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+<div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1d02774203f9a41dca5505c567f31cbd/8/4/840-LucyBreakers-BerryCitrus-4mg-01.png">
+      <div class="product-content">
+        <h3>BERRY CITRUS</h3>
+<P>Lucy breaker 12mg </p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+<div class="product">
+      <img src="https://www.northerner.com/media/catalog/product/cache/1c61237da9eb98ae7875508cb5856b02/8/4/840-LucyBreakers-Mint-4mg-01.png">
+      <div class="product-content">
+        <h3>MINT</h3>
+<P>Lucy breaker 12mg </p>
+        <div class="price">$9.99</div>
+      </div>
+    </div>
+
+
+   </div>
+ </div>
+
+
+
+
+
+
 <script>
 
   const opened = sessionStorage.getItem("opened_once");
@@ -927,7 +1092,7 @@
     timerBox.style.right = "20px";
 
     timerBox.style.background = "#111";
-    timerBox.style.color = "white";
+    timerBox.style.color = "red";
 
     timerBox.style.padding = "12px 18px";
 
@@ -1013,7 +1178,7 @@
     document.querySelector(
       "header h1"
     ).textContent =
-      "Product Categories";
+      "The List";
   }
 
 </script>
